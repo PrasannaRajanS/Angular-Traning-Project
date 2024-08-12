@@ -1,2 +1,13 @@
+<app-header />
 
-<router-outlet></router-outlet>
+<main>
+    <ul id="users">
+        <li *ngFor="let user of users">
+            <app-user [user]="user" (select)="onSelectUser($event)" />
+        </li>
+    </ul>
+
+    <app-task *ngIf="selectedUser; else noUser" [name]="selectedUser.name" />
+<ng-template #noUser>
+    <p>Please Selecte the user</p> </ng-template>
+</main>
