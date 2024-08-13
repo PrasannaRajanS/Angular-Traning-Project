@@ -10,15 +10,14 @@ export class AppComponent {
   title = 'TraningProjec';
   users = DUMMY_USERS
 
-  selectedId = "u1"
-
+  selectedID:string = ""
 
   get selectedUser(){
-    return this.users.find((user)=>user.id === this.selectedId)
+    return this.users.find((user)=>user.id === this.selectedID)
   }
 
   onSelectUser(id:string){
     console.log(id);
-    this.selectedId = id
+    this.selectedID = id
   }
 }

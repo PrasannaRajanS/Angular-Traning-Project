@@ -1,0 +1,23 @@
+
+<div *ngIf="isAddingTask">
+
+    <app-new-task (cancel)="cancelAddingTask()"/>
+
+</div>
+
+<section id="tasks">
+ 
+    <header>
+        <h2>{{name}}'s Task</h2>
+ 
+        <menu>
+            <button (click)="addingTask()">Add Task</button>
+        </menu>
+    </header>
+    <ul>
+        <li *ngFor="let task of selectedUserTask">
+          <app-task [task]='task' (complete)="onCOmpleteTask($event)" />
+        </li>
+      </ul>
+     
+</section>
